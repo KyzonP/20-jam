@@ -17,5 +17,5 @@ func action():
 	get_parent().add_child(peaInst)
 
 func destroy():
-	emit_signal("plantDestroyed", self)
+	emit_signal("plantDestroyed")
 	self.queue_free()

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c03edx4ixhupj"]
+
+[ext_resource type="Texture2D" uid="uid://ur2lxwee4f56" path="res://assets/placeholder/sun.png" id="1_cojbh"]
+[ext_resource type="Script" uid="uid://vistp80ll3nd" path="res://scripts/sun.gd" id="1_fdjia"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdjia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cojbh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gpmc"]
+radius = 14.0
+
+[node name="Sun" type="Area2D" unique_id=952876269]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_fdjia")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=801807591]
+sprite_frames = SubResource("SpriteFrames_fdjia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1062038317]
+shape = SubResource("CircleShape2D_6gpmc")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bp42lqq127yjk"]
+
+[ext_resource type="Script" uid="uid://n7ui2ib7j2bj" path="res://resources/wave_data.gd" id="1_a8lqo"]
+[ext_resource type="Script" uid="uid://ckrj53w0ayybe" path="res://resources/level_data.gd" id="1_ju36h"]
+[ext_resource type="Script" uid="uid://dngrw1lb64esy" path="res://resources/enemy_sequence.gd" id="2_ju36h"]
+[ext_resource type="PackedScene" uid="uid://jiroega8fulw" path="res://scenes/zombies/zombie.tscn" id="4_hw4u3"]
+
+[sub_resource type="Resource" id="Resource_67m3c"]
+script = ExtResource("2_ju36h")
+zombie_type = ExtResource("4_hw4u3")
+metadata/_custom_type_script = "uid://dngrw1lb64esy"
+
+[sub_resource type="Resource" id="Resource_qp0jv"]
+script = ExtResource("1_a8lqo")
+sequences = Array[ExtResource("2_ju36h")]([SubResource("Resource_67m3c")])
+time_between_waves = 20.0
+metadata/_custom_type_script = "uid://n7ui2ib7j2bj"
+
+[sub_resource type="Resource" id="Resource_hw4u3"]
+script = ExtResource("2_ju36h")
+zombie_type = ExtResource("4_hw4u3")
+metadata/_custom_type_script = "uid://dngrw1lb64esy"
+
+[sub_resource type="Resource" id="Resource_37f2s"]
+script = ExtResource("1_a8lqo")
+sequences = Array[ExtResource("2_ju36h")]([SubResource("Resource_hw4u3")])
+time_between_waves = 20.0
+metadata/_custom_type_script = "uid://n7ui2ib7j2bj"
+
+[sub_resource type="Resource" id="Resource_03egs"]
+script = ExtResource("2_ju36h")
+zombie_type = ExtResource("4_hw4u3")
+metadata/_custom_type_script = "uid://dngrw1lb64esy"
+
+[sub_resource type="Resource" id="Resource_k6p6l"]
+script = ExtResource("1_a8lqo")
+sequences = Array[ExtResource("2_ju36h")]([SubResource("Resource_03egs")])
+metadata/_custom_type_script = "uid://n7ui2ib7j2bj"
+
+[sub_resource type="Resource" id="Resource_hohva"]
+script = ExtResource("2_ju36h")
+zombie_type = ExtResource("4_hw4u3")
+amount = 2
+metadata/_custom_type_script = "uid://dngrw1lb64esy"
+
+[sub_resource type="Resource" id="Resource_2yr6n"]
+script = ExtResource("1_a8lqo")
+sequences = Array[ExtResource("2_ju36h")]([SubResource("Resource_hohva")])
+metadata/_custom_type_script = "uid://n7ui2ib7j2bj"
+
+[resource]
+script = ExtResource("1_ju36h")
+waves = Array[ExtResource("1_a8lqo")]([SubResource("Resource_qp0jv"), SubResource("Resource_37f2s"), SubResource("Resource_k6p6l"), SubResource("Resource_2yr6n")])
+metadata/_custom_type_script = "uid://ckrj53w0ayybe"

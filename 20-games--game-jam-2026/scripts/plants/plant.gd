@@ -4,7 +4,7 @@ extends Area2D
 @export var actionTimeMax : float = 1.5
 @export var maxHp = 6
 # Current of variables
-var actionTimer = 0.0
+@export var actionTimer = 17.0
 var hp : int = 100
 
 ###  Signals ###

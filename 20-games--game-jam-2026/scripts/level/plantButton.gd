@@ -17,7 +17,8 @@ func on_pressed():
 	emit_signal("plantSelected", plant, cost, id, self)
 	disabled = true
 
-func recharge():
-	await get_tree().create_timer(rechargeTimeMax).timeout
+func recharge(cancel : bool = false):
+	if !cancel:
+		await get_tree().create_timer(rechargeTimeMax).timeout
 	
 	disabled = false

@@ -20,6 +20,9 @@ func enableButtons():
 		i.disabled = false
 	
 func _set_plant(plant, cost, id, button):
+	
+	deselectPlant(true)
+	
 	currentPlant = plant
 	sunCost = cost
 	plantId = id
@@ -35,13 +38,15 @@ func check_Sun():
 func get_Plant():
 	return currentPlant
 	
-func plantPlaced():
+func plantPlaced(cancel : bool = false):
 	currentPlant = null
 	sunCost = 0
 	
+	deselectPlant(cancel)
+					
+func deselectPlant(cancel: bool = false):
 	# Start plant button recharge
 	if not plantButton == null:
-		plantButton.recharge()
+		plantButton.recharge(cancel)
 		plantButton = null
-					
 				
