@@ -101,8 +101,10 @@ anchors_preset = 0
 
 [node name="PlantButtons" type="VBoxContainer" parent="UI" unique_id=286256063]
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 648.0
+offset_left = 31.0
+offset_top = 73.0
+offset_right = 96.0
+offset_bottom = 505.0
 mouse_filter = 2
 script = ExtResource("9_koolm")
 
@@ -125,11 +127,17 @@ cost = 50
 id = 2
 
 [node name="SunAmount" type="RichTextLabel" parent="." unique_id=738446653]
-offset_right = 1153.0
-offset_bottom = 40.0
+offset_left = 31.0
+offset_top = 73.0
+offset_right = 799.0
+offset_bottom = 137.0
 mouse_filter = 2
 bbcode_enabled = true
 text = "[center]Mana: 50"
 
 [node name="Spawner" parent="." unique_id=388092202 instance=ExtResource("13_qp8np")]
 level_config = SubResource("Resource_6dg7o")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1216869478]
+position = Vector2(415, 289)
+zoom = Vector2(1.5, 1.5)

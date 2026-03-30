@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var anim = $Sprite2D
+var mapHelper : Node2D
 
 signal gridSnap
 

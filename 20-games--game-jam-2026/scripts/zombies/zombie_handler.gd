@@ -20,7 +20,7 @@ enum States {MOVING, EATING}
 
 func _ready():
 	add_to_group("Zombie")
-	event_bus.emit_signal("zombieSpawned", self)
+	event_bus.emit_signal("zombieSpawned")
 	
 	area_entered.connect(collision)
 	

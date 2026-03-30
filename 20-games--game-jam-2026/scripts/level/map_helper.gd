@@ -13,5 +13,6 @@ func is_tile_occupied(pos) -> bool:
 func snap_to_grid(body, pos):
 	var current_cell = grid.local_to_map(pos)
 	
-	if body.global_position != grid.map_to_local(current_cell):
-		body.global_position = grid.map_to_local(current_cell)
+	if is_tile_occupied(pos):
+		if body.global_position != grid.map_to_local(current_cell):
+			body.global_position = grid.map_to_local(current_cell)

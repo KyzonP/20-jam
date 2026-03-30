@@ -30,7 +30,7 @@ func _set_plant(plant, cost, id, button):
 	plantButton = button
 	
 	# Emit plant selected signal
-	emit_signal("plantSelected", plantId, button)
+	emit_signal("plantSelected", plantId, false, button)
 	
 func check_Sun():
 	return sunCost

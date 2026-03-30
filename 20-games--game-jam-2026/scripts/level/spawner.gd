@@ -9,7 +9,7 @@ func _ready():
 
 func start_level():
 	#Wait 20 seconds to start level
-	await get_tree().create_timer(20.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	
 	print("Starting: ", level_config.level_name)
 	spawn_wave()
@@ -36,5 +36,6 @@ func spawn_zombie(type: PackedScene):
 	var zombie = type.instantiate()
 	# Randomly pick a lane
 	var lane = randi_range(0,4)
-	zombie.global_position = Vector2(767, 160 + (lane * 64))
+	zombie.global_position = Vector2(867, 160 + (lane * 64))
+	#zombie.global_position = Vector2(767, 160 + (lane * 64))
 	get_parent().add_child(zombie)

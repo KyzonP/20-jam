@@ -9,6 +9,7 @@ var is_dying : bool = false
 ### ANIMATION ###
 var intercept_x : float
 var travel_time : float
+var target
 
 func _ready():
 	area_entered.connect(collision)
@@ -72,11 +73,14 @@ func calculate_intercept(target_zombie):
 		travel_time = default_distance / speed
 		intercept_x = global_position.x + default_distance
 		
-	var distance_to_target = abs(intercept_x - global_position.x)
-	# Clamping height so close up shots dont get ridiculously high
-	var dynamic_height = clamp(-distance_to_target * 0.2, -150.0, -20.0)
+	if target_zombie != target:
+		var distance_to_target = abs(intercept_x - global_position.x)
+		# Clamping height so close up shots dont get ridiculously high
+		var dynamic_height = clamp(-distance_to_target * 0.2, -150.0, -20.0)
+			
+		$ArrowSwarm.current_travel_time = travel_time
+		$ArrowSwarm.arc_height = dynamic_height
 		
-	$ArrowSwarm.current_travel_time = travel_time
-	$ArrowSwarm.arc_height = dynamic_height
+		target = target_zombie
 		
 	

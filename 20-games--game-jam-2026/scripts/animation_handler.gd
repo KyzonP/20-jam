@@ -27,6 +27,12 @@ func _ready():
 		
 		anim.position = Vector2(rx, ry)
 		
+		# Randomize appearance slightly
+		var gray_val = randf_range(0.75,1.0)
+		anim.self_modulate = Color(gray_val, gray_val, gray_val)
+		
+		anim.frame = randi()%4
+		
 func _process(_delta):
 	var time = Time.get_ticks_msec() / 1000.0
 	var children = get_children()
@@ -54,7 +60,8 @@ func pile_in(pos):
 		if child is AnimatedSprite2D:
 			### animation here ###
 			child.play("attack")
-			pass
+			child.frame = randi()%4
+			
 			
 func end_pile_in():
 	var tween = create_tween()
@@ -64,7 +71,7 @@ func end_pile_in():
 		if child is AnimatedSprite2D:
 			### animation here ###
 			child.play("walk")
-			pass
+			child.frame = randi()%4
 			
 	endPileIn.emit()
 			

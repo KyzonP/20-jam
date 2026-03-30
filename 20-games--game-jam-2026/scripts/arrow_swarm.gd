@@ -22,7 +22,7 @@ func _physics_process(delta):
 	elapsed_time += delta
 	
 	# Calculate progress
-	var total_estimated = elapsed_time + current_travel_time
+	var _total_estimated = elapsed_time + current_travel_time
 	var progress = clamp(elapsed_time / current_travel_time, 0.0, 1.0)
 	
 	# Math for fake height
